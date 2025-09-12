@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-dice"
+version = "2020.02.24+git"
+authors = [
+    { name = "Andrey Rahmatullin" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "pylint",
+
+    "pytest",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+Dice = "limnoria_dice"
+
+[tool.setuptools.package-dir]
+"limnoria_dice" = "."
+"limnoria_dice.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_dice" = ["locales/*.po"]

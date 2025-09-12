@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-cayenne"
+version = "2020.02.24+git"
+authors = [
+    { name = "butterscotchstallion" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "requests",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+Cayenne = "limnoria_cayenne"
+
+[tool.setuptools.package-dir]
+"limnoria_cayenne" = "."
+"limnoria_cayenne.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_cayenne" = ["locales/*.po"]

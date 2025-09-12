@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-geo"
+version = "2020.02.24+git"
+authors = [
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "geoip2",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+Geo = "limnoria_geo"
+
+[tool.setuptools.package-dir]
+"limnoria_geo" = "."
+"limnoria_geo.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_geo" = ["locales/*.po"]

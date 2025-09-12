@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-cah"
+version = "2020.02.24+git"
+authors = [
+    { name = "James Scott" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+CAH = "limnoria_cah"
+
+[tool.setuptools.package-dir]
+"limnoria_cah" = "."
+"limnoria_cah.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_cah" = ["locales/*.po"]

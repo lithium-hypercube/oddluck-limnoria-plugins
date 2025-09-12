@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-wordgames"
+version = "2020.02.24+git"
+authors = [
+    { name = "Mike Mueller" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+WordGames = "limnoria_wordgames"
+
+[tool.setuptools.package-dir]
+"limnoria_wordgames" = "."
+"limnoria_wordgames.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_wordgames" = ["locales/*.po"]

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-worldtime"
+version = "2020.02.24+git"
+authors = [
+    { name = "spline" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "pendulum",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+WorldTime = "limnoria_worldtime"
+
+[tool.setuptools.package-dir]
+"limnoria_worldtime" = "."
+"limnoria_worldtime.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_worldtime" = ["locales/*.po"]

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-googlecloud"
+version = "2020.02.24+git"
+authors = [
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "requests",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+GoogleCloud = "limnoria_googlecloud"
+
+[tool.setuptools.package-dir]
+"limnoria_googlecloud" = "."
+"limnoria_googlecloud.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_googlecloud" = ["locales/*.po"]

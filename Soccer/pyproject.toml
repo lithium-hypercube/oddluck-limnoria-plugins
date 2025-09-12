@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-soccer"
+version = "2020.02.24+git"
+authors = [
+    { name = "cottongin" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+    "pendulum",
+
+    "requests",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+Soccer = "limnoria_soccer"
+
+[tool.setuptools.package-dir]
+"limnoria_soccer" = "."
+"limnoria_soccer.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_soccer" = ["locales/*.po"]

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-wolframalpha"
+version = "2020.06.23+git"
+authors = [
+    { name = "spline" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+WolframAlpha = "limnoria_wolframalpha"
+
+[tool.setuptools.package-dir]
+"limnoria_wolframalpha" = "."
+"limnoria_wolframalpha.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_wolframalpha" = ["locales/*.po"]

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "limnoria-huntnfish"
+version = "2020.02.24+git"
+authors = [
+    { name = "resistivecorpse" },
+    { name = "oddluck <oddluck@riseup.net>" },
+]
+readme = "README.md"
+dependencies = [
+    "limnoria",
+]
+classifiers = [
+    'Environment :: Plugins',
+    'Programming Language :: Python :: 3',
+    'Topic :: Communications :: Chat',
+]
+
+[project.entry-points.'limnoria.plugins']
+HuntNFish = "limnoria_huntnfish"
+
+[tool.setuptools.package-dir]
+"limnoria_huntnfish" = "."
+"limnoria_huntnfish.local" = "local/"
+
+[tool.setuptools.package-data]
+"limnoria_huntnfish" = ["locales/*.po"]
